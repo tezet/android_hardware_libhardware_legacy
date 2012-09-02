@@ -110,12 +110,13 @@ public:
     // the output has exited standby
     virtual status_t    getRenderPosition(uint32_t *dspFrames) = 0;
 
+#ifndef USES_AUDIO_LEGACY
     /**
      * get the local time at which the next write to the audio driver will be
      * presented
      */
     virtual status_t    getNextWriteTimestamp(int64_t *timestamp);
-
+#endif
 };
 
 /**
