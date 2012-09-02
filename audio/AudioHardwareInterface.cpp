@@ -69,12 +69,13 @@ AudioHardwareInterface* AudioHardwareInterface::create()
 AudioStreamOut::~AudioStreamOut()
 {
 }
-
+#ifndef USES_AUDIO_LEGACY
 // default implementation is unsupported
 status_t AudioStreamOut::getNextWriteTimestamp(int64_t *timestamp)
 {
     return INVALID_OPERATION;
 }
+#endif
 
 AudioStreamIn::~AudioStreamIn() {}
 
